@@ -21,10 +21,6 @@ def write_table_metadata(catalog: str, schema: str, table: str, metadata: data_t
                  access_token    = os.getenv("DATABRICKS_TOKEN")) as connection:
         cursor = connection.cursor()
         try:
-            """
-            COMMENT ON TABLE <catalog>.<schema>.<table> IS 'Your table description';
-            ALTER TABLE <catalog>.<schema>.<table> ALTER COLUMN <column> COMMENT 'Your column description';
-            """
             # Write table description
             cursor.execute(f"COMMENT ON TABLE {table_fqdn} IS '{metadata.description}'")
             
