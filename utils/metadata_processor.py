@@ -33,11 +33,11 @@ def process_metadata(path:str, catalog:str, schema:str):
             file_path = os.path.join(path, filename)
             with open(file_path, 'r') as file:
                 yaml_content = file.read()
-                tables = yaml_parser.parse_yaml_to_tables(yaml_content)
+                t = yaml_parser.parse_yaml_to_tables(yaml_content)
                 if tables is None:
                     logging.error(f"Failed to parse YAML content from {file_path}.")
                     continue
-                tables.append(tables)
+                tables += t
 
     if not tables:
         logging.warning("No tables found in the provided YAML files.")
