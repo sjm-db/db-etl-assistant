@@ -1,0 +1,22 @@
+tables:
+  - name: securities
+    description: Master list of all tradable securities and their attributes
+    columns:
+      - name: ticker
+        description: Stock ticker symbol (e.g., AAPL, MSFT)
+      - name: sector
+        description: Industry sector classification
+      - name: market_cap
+        description: Market capitalization in USD
+
+  - name: prices
+    description: Historical OHLC price and volume data for securities
+    columns:
+      - name: date
+        description: Trading date in YYYY-MM-DD format
+      - name: open
+        description: Opening price for the trading day
+      - name: close
+        description: Closing price for the trading day
+      - name: volume
+        description: Number of shares traded
