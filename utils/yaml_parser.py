@@ -1,4 +1,4 @@
-from utils.data_types import Table, TableColumn
+from data_types import Table
 from typing import List
 import logging
 import yaml

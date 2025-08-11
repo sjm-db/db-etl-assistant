@@ -1,6 +1,6 @@
 import os
 import logging
-from utils import yaml_parser, metadata_writer, data_types
+import yaml_parser, metadata_writer, data_types
 
 def process_metadata(path:str, catalog:str, schema:str):
     """
