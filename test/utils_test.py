@@ -1,12 +1,10 @@
-import test
 import sys
 import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.insert(0, parent_dir) 
 from utils import yaml_parser
-from utils.data_types import Table, TableColumn
-
+from utils.data_types import Table
 
 """
 test.yml contents:
@@ -65,5 +63,4 @@ def test_parse_yaml_to_tables():
 if __name__ == "__main__":
     test_parse_yaml_to_tables()
     print("All tests passed!")
-    
     

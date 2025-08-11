@@ -18,3 +18,4 @@ class Table:
     def __str__(self):
         column_strs = [f"{col.name}: {col.description}" for col in self.columns]
         return f"Table: {self.name}\nDescription: {self.description}\nColumns:\n" + "\n".join(column_strs)
+    
