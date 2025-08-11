@@ -30,6 +30,7 @@ def process_metadata(path:str, catalog:str, schema:str):
 
     for filename in os.listdir(path):
         if filename.endswith('.yml') or filename.endswith('.yaml'):
+            logging.debug(f"Processing file: {filename}")
             file_path = os.path.join(path, filename)
             with open(file_path, 'r') as file:
                 yaml_content = file.read()
@@ -37,13 +38,17 @@ def process_metadata(path:str, catalog:str, schema:str):
                 if tables is None:
                     logging.error(f"Failed to parse YAML content from {file_path}.")
                     continue
-                tables += t
+                logging.debug(f"Parsed {len(tables)} tables from {file_path}.")
+                tables = tables + t
 
     if not tables:
         logging.warning("No tables found in the provided YAML files.")
         return
     
+    logging.info("tables: {}".format(tables))
+
     for table in tables:
+        logging.debug(f"Processing table: {table}")
         if not isinstance(table, data_types.Table):
             logging.error("Parsed object is not an instance of Table.")
             continue
@@ -55,5 +60,3 @@ def process_metadata(path:str, catalog:str, schema:str):
         else:
             logging.info(f"Metadata for table {table.name} written successfully.")
     logging.info("Metadata processing completed.")
-
-    
