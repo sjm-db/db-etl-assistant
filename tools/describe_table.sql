@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION etl_assist_test.tools.describe_table(
+CREATE OR REPLACE FUNCTION describe_table(
   cat STRING COMMENT 'Catalog name',
   sch STRING COMMENT 'Schema name',
   tbl STRING COMMENT 'Table name'
