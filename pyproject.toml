@@ -1,7 +1,7 @@
 [project]
 name = "db-etl-assistant"
 version = "0.1.0"
-description = "Add your description here"
+description = "A helper pipeline meant to assist with building ETL pipelines using PySpark, SQL, and an agent based LLM model."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
